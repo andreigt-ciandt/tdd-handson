@@ -1,10 +1,10 @@
 package com.ciandt.tdd.handson.tddhandson.external.data.memory;
 
 import com.ciandt.tdd.handson.tddhandson.entity.Product;
-import com.ciandt.tdd.handson.tddhandson.entity.User;
 import com.ciandt.tdd.handson.tddhandson.external.data.ProductRepository;
 import com.ciandt.tdd.handson.tddhandson.external.data.exception.ProductNotFoundException;
-import com.ciandt.tdd.handson.tddhandson.external.data.exception.UserNotFoundException;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,6 +13,7 @@ public class ProductInMemoryRepository implements ProductRepository {
 
     private ProductIdGenerator productIdGenerator;
 
+    @Autowired
     public ProductInMemoryRepository(ProductIdGenerator productIdGenerator) {
         this.productIdGenerator = productIdGenerator;
     }

@@ -3,6 +3,8 @@ package com.ciandt.tdd.handson.tddhandson.external.data.memory;
 import com.ciandt.tdd.handson.tddhandson.entity.User;
 import com.ciandt.tdd.handson.tddhandson.external.data.UserRepository;
 import com.ciandt.tdd.handson.tddhandson.external.data.exception.UserNotFoundException;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,6 +13,7 @@ public class UserInMemoryRepository implements UserRepository {
 
     private UserIdGenerator userIdGenerator;
 
+    @Autowired
     public UserInMemoryRepository(UserIdGenerator userIdGenerator) {
         this.userIdGenerator = userIdGenerator;
     }
